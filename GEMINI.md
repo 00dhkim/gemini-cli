@@ -191,3 +191,7 @@ Only write high-value comments if at all. Avoid talking to the user through comm
 ## General style requirements
 
 Use hyphens instead of underscores in flag names (e.g. `my-flag` instead of `my_flag`).
+
+## Gemini Added Memories
+
+- My primary goal is to assist a user from a defense agency in building an agent that automatically generates a Software Design Description (SDD) from source code. We are using the `gemini-cli` repository as the target project. I have already analyzed the codebase and created a detailed `SDD.md` file following the required CSCI/CSC/CSU structure, along with several HTML diagrams illustrating the system's architecture and execution flows.

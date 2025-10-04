@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI-01 Diagram</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    </script>
+</head>
+<body>
+    <h1>CSCI-01: Gemini CLI Execution Flow</h1>
+    <pre class="mermaid">
+        graph TD
+            A[User Input in Terminal] --> B{CSC-01.01: Command & Input Handling};
+            B --> C[CSU-01.01.01: Main App loads];
+            C --> D{CSC-01.03: Config & Auth Mgmt};
+            D -- "Load settings.json" --> E[CSU-01.03.02: Settings];
+            D -- "Check Auth" --> F[CSU-01.03.01: Auth Flow];
+            C --> G{Parse Command & Flags};
+            G -- "User Prompt" --> H[INT-01: Send to CSCI-02 Core];
+            H --> I[Wait for Core Response...];
+            I -- "Final Answer" --> J{CSC-01.02: UI Rendering};
+            J --> K[CSU-01.02.01: UI Layouts];
+            K --> L[CSU-01.02.02: UI Components];
+            L --> M[Display Output in Terminal];
+    </pre>
+</body>
+</html>

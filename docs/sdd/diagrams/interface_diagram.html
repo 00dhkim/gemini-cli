@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI Interface Diagram</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    </script>
+</head>
+<body>
+    <h1>CSCI Interface Configuration Diagram</h1>
+    <pre class="mermaid">
+        graph TD
+            subgraph User Space
+                A[CSCI-01: Gemini CLI]
+            end
+
+            subgraph Agent Engine
+                B[CSCI-02: Gemini Core]
+            end
+            
+            subgraph Agent Tools
+                C[CSCI-03: Built-in Tools]
+            end
+
+            subgraph External Systems
+                D[External: Gemini API]
+                E[External: OTLP Collector]
+                F[External: OS/Web]
+            end
+
+            A -- "INT-01: User Prompt" --> B
+            B -- "INT-02: Tool Execution Request" --> C
+            C -- "INT-02: Tool Result" --> B
+            B -- "INT-03: API Request" --> D
+            D -- "INT-03: API Response" --> B
+            B -- "INT-04: Telemetry Data" --> E
+            C -- "INT-05: System Call / HTTP Request" --> F
+            F -- "INT-05: System Response" --> C
+            B -- "Final Response" --> A
+    </pre>
+</body>
+</html>
